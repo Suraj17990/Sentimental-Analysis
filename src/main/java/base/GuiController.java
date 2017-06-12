@@ -14,9 +14,4 @@ public class GuiController {
                             driver = new ChromeDriver();
         }
     }
-
-    /*public static void main(String[] args) {
-        GuiController gc = new GuiController();
-        gc.initializeBrowser("chrome","mac");
-    }*/
 }

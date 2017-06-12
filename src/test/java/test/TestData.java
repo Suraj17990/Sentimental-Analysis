@@ -12,8 +12,8 @@ import java.util.List;
  * Created by suraj on 5/30/17.
  */
 public class TestData extends Util {
-    @Test
-    public void testDataSet(){
+    @Test (dataProvider = "testdata")
+    public void testDataSet(String inputData){
         //navigate to the site
         driver.get("http://blackbird.dcc.ufmg.br:1210/");
         //maximize the browser window
@@ -22,7 +22,7 @@ public class TestData extends Util {
         WebElement input = driver.findElement(By.xpath("//input[@class='form-control']"));
         //check if it is displayed and then enter the text which you want to test
         if(input.isDisplayed()){
-            input.sendKeys("Hello");
+            input.sendKeys(inputData);
         } else {
             System.out.println(input + "not displayed");
             Assert.assertEquals(input,"not displayed");
